@@ -34,7 +34,7 @@ class Repository {
   }
 
   static Future<List<InstaStories>> getInstaStories() async {
-    final uri = "https://api.npoint.io/5b63e3cbcc5255a2e757";
+    const uri = "https://api.npoint.io/5b63e3cbcc5255a2e757";
     final response = await get(Uri.parse(uri));
     final data = jsonDecode(utf8.decode(response.bodyBytes))['data'];
 

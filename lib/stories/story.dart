@@ -40,7 +40,7 @@ class InstaStory extends StatelessWidget {
 class StoryViewDelegate extends StatefulWidget {
   final List<InstaStories>? stories;
    int index;
-   StoryViewDelegate({this.stories, required this.index});
+   StoryViewDelegate({Key? key, this.stories, required this.index}) : super(key: key);
 
 
   @override
@@ -124,14 +124,14 @@ class _StoryViewDelegateState extends State<StoryViewDelegate> {
               children: [
                 Text(
                   users[widget.index].name,
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: Colors.white),
                 ),
                 Text(
                   when!,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white38,
                   ),
                 )
@@ -157,7 +157,14 @@ class _StoryViewDelegateState extends State<StoryViewDelegate> {
           storyItems: storyItems,
           controller: controller,
           onComplete: () {
-            Navigator.of(context).pop();
+            ++widget.index;
+            widget.index < users.length ?
+            {
+            Navigator.pop(context),
+            Navigator.of(context).push(
+            MaterialPageRoute(builder : (context) => InstaStory(index: widget.index))),
+            } :
+            Navigator.pop(context);
           },
           onVerticalSwipeComplete: (v) {
             if (v == Direction.down) {

@@ -30,18 +30,46 @@ dependencies:
   flutter:
     sdk: flutter
 
-  story_view: ^0.13.2
   introduction_screen: ^3.0.1
-  cupertino_icons: ^1.0.2
   flutter_native_splash: ^2.1.6
+
+  #home_screen:
+  cupertino_icons: ^1.0.2
   readmore: ^2.1.0
-  firebase_auth: ^3.3.17
-  wc_form_validators: ^1.0.0
-  sqflite: ^2.0.2+1
-  validators: ^3.0.0
-  instabug_flutter:
-  holding_gesture: ^1.1.0
   url_launcher: ^6.1.2
+  story_view: ^0.13.2
+  holding_gesture: ^1.1.0
+
+  #login_screen:
+  validators: ^3.0.0
+  wc_form_validators: ^1.0.0
+
+  #number_screen:
+  numberpicker: ^2.1.1
+  intl: ^0.17.0
+  intl_phone_number_input: ^0.7.0+2
+
+  #random
+  instabug_flutter:
+
+  #local_database:
+  bloc: ^8.0.3
+  sqflite: ^2.0.2+1
+  flutter_bloc: ^8.0.1
+  flutter_gifimage: ^1.0.1
+  gif_view: ^0.0.1
+  animated_text_kit: ^4.2.1
+  flutter_animated_dialog: ^2.0.1
+
+  #database:
+#  firebase_core: ^1.17.0
+#  firebase_auth: ^3.3.17
+#  google_sign_in: ^5.3.1
+#  cloud_firestore: ^3.1.15
+#  firebase_analytics: ^9.1.8
+#  firebase_crashlytics: ^2.8.0
+#  firebase_performance: ^0.8.0+12
+
 
 dev_dependencies:
   flutter_test:
@@ -52,7 +80,7 @@ dev_dependencies:
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/instalogo.png"
+  image_path: "assets/launcher_icon/instalogo.png"
   remove_alpha_ios: true
 
 
@@ -61,7 +89,12 @@ flutter:
 
   uses-material-design: true
   assets:
-     - assets/
+     - assets/home_screen/
+     - assets/launcher_icon/
+     - assets/number_screen/
+     - assets/signup_screen/
+     - assets/splash/
+     - assets/splash/
 
 
   fonts:
@@ -79,4 +112,3 @@ flutter:
       fonts:
         - asset: fonts/CustomIcons3.ttf
 
-# the following method allow you to fold the text and vice-versa

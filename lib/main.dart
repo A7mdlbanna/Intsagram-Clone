@@ -1,8 +1,11 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutterapp/home_screen.dart';
-import 'package:flutterapp/loginscreen.dart';
-import 'package:flutterapp/signup.dart';
+import 'package:flutterapp/layout/home_screen.dart';
+import 'package:flutterapp/layout/loginscreen.dart';
+import 'package:flutterapp/layout/PhoneNumber/number_screen.dart';
+import 'package:flutterapp/layout/signup.dart';
+import 'package:flutterapp/shared/bloc_observer.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -11,8 +14,12 @@ void main() {
       DeviceOrientation.portraitDown
     ]
   );
-
-  runApp(MyApp());
+  BlocOverrides.runZoned(
+        () {
+      runApp(const MyApp());
+    },
+    blocObserver: MyBlocObserver(),
+  );
 }
 class MyApp extends StatelessWidget{
   const MyApp({Key? key}) : super(key: key);
@@ -21,13 +28,15 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark(),
-      home: HomeScreen(),
+      home: LoginScreen(),
       initialRoute: '/',
       routes:{
         '/loginScreen' : (context) => LoginScreen(),
-        '/signup' : (context) => SignUp()
+        '/signup' : (context) => SignUp(),
+        '/NumberScreen' : (context) => NumberScreen(),
+        '/HomeScreen' : (context) => HomeScreen(),
       },
-     );
+    );
   }
 }
 

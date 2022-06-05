@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/Icons/custom_icons_icons.dart';
 import 'package:flutterapp/Icons/custom_icons_icons2.dart';
 import 'package:flutterapp/stories/story.dart';
 import 'package:readmore/readmore.dart';
-import 'package:story_view/widgets/story_view.dart';
-import 'models/users.dart';
+import '../models/users.dart';
 
 class HomeScreen extends StatefulWidget{
   const HomeScreen({Key? key}) : super(key: key);
@@ -17,15 +15,15 @@ class _HomeScreenState extends State<HomeScreen> {
 
   late List<UserModel> users = [
     UserModel(
-        image: "assets/me.jpg",
+        image: "assets/home_screen/me.jpg",
         name: "A7mdlbanna"
     ),
     UserModel(
-        image: "assets/billie1.jpg",
+        image: "assets/home_screen/billie1.jpg",
         name: "billieeilish"
     ),
     UserModel(
-        image: "assets/ps.png",
+        image: "assets/home_screen/ps.png",
         name: "photoshop_box")
   ];
   Widget BuildStoryItem(user, index) =>
@@ -42,11 +40,11 @@ class _HomeScreenState extends State<HomeScreen> {
               Stack(
                 alignment: Alignment.center,
                 children: [
-                  CircleAvatar(
-                    backgroundImage: AssetImage("assets/storyaura.png"),
+                  const CircleAvatar(
+                    backgroundImage:  AssetImage("assets/home_screen/storyaura.png"),
                     radius: 36.4,
                   ),
-                  CircleAvatar(
+                  const CircleAvatar(
                     backgroundColor: Colors.black,
                     radius: 35,
                   ),
@@ -56,11 +54,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 4,),
+              const SizedBox(height: 4,),
               Text(
                 user.name,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(fontSize: 13, color: Colors.white),
+                style: const TextStyle(fontSize: 13, color: Colors.white),
               ),
             ],
           ),
@@ -78,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: const [
                     Center(
                       child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/billie1.jpg"),
+                        backgroundImage: AssetImage("assets/home_screen/billie1.jpg"),
                         radius: 16,
                       ),
                     ),
@@ -117,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     fit: BoxFit.cover, // Fixes border issues
                     width: 360,
                     height: 420,
-                    image: const AssetImage("assets/billie2.jpg"),
+                    image: const AssetImage("assets/home_screen/billie2.jpg"),
                   ),
                 ),
               ),
@@ -242,7 +240,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     icon: CircleAvatar(
-                      backgroundImage: AssetImage("assets/me.jpg"),
+                      backgroundImage: AssetImage("assets/home_screen/me.jpg"),
                       radius: 14,
                     ),
                     hintText: 'Add a comment...',
@@ -337,14 +335,14 @@ class _HomeScreenState extends State<HomeScreen> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  SizedBox(width: 12,),
+                  const SizedBox(width: 12,),
                   Column(
                     children: [
                       Stack(
                         alignment: Alignment.bottomRight,
                         children: [
-                          CircleAvatar(
-                            backgroundImage: AssetImage("assets/me.jpg"),
+                          const CircleAvatar(
+                            backgroundImage: AssetImage("assets/home_screen/me.jpg"),
                             radius: 32,
                           ),
                           Container(
@@ -365,10 +363,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           )
                         ],
                       ),
-                      SizedBox(height: 12,),
-                      Text(
+                      const SizedBox(height: 12,),
+                      const Text(
                         'Your Story',
-                        style: TextStyle(fontSize: 12, color: Colors.white),
+                        style: const TextStyle(fontSize: 12, color: Colors.white),
                       ),
                     ],
                   ),
@@ -409,7 +407,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: const [
                   Center(
                     child: CircleAvatar(
-                      backgroundImage: AssetImage("assets/billie1.jpg"),
+                      backgroundImage: AssetImage("assets/home_screen/billie1.jpg"),
                       radius: 16,
                     ),
                   ),
@@ -448,7 +446,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   fit: BoxFit.cover, // Fixes border issues
                   width: 360,
                   height: 420,
-                  image: const AssetImage("assets/billie2.jpg"),
+                  image: const AssetImage("assets/home_screen/billie2.jpg"),
                 ),
               ),
             ),
@@ -573,7 +571,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   icon: CircleAvatar(
-                    backgroundImage: AssetImage("assets/me.jpg"),
+                    backgroundImage: AssetImage("assets/home_screen/me.jpg"),
                     radius: 14,
                   ),
                   hintText: 'Add a comment...',
@@ -603,7 +601,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: const [
                   Center(
                     child: CircleAvatar(
-                      backgroundImage: AssetImage("assets/ps.png"),
+                      backgroundImage: AssetImage("assets/home_screen/ps.png"),
                       radius: 16,
                     ),
                   ),
@@ -643,7 +641,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   fit: BoxFit.cover, // Fixes border issues
                   width: 350,
                   height: 420,
-                  image: const AssetImage("assets/pspost.webp"),
+                  image: const AssetImage("assets/home_screen/pspost.webp"),
                 ),
               ),
             ),
@@ -730,14 +728,14 @@ class _HomeScreenState extends State<HomeScreen> {
               child: RichText(
                 text: TextSpan(
                   children: <TextSpan>[
-                    TextSpan(
+                    const TextSpan(
                       text: 'photoshop_box ',
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 15, fontWeight: FontWeight.bold),
                     ),
-                    TextSpan(
+                    const TextSpan(
                       text: 'New ArtWork by ',
-                      style: TextStyle(fontSize: 15, color: Colors.white),
+                      style: const TextStyle(fontSize: 15, color: Colors.white),
                     ),
                     TextSpan(
                       text: '@slimshady',
@@ -769,7 +767,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   icon: CircleAvatar(
-                    backgroundImage: AssetImage("assets/me.jpg"),
+                    backgroundImage: AssetImage("assets/home_screen/me.jpg"),
                     radius: 14,
                   ),
                   hintText: 'Add a comment...',
@@ -804,8 +802,8 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               IconButton(
                 icon: ImageIcon(isPressed_home
-                    ? AssetImage("assets/homefilled.png")
-                    : AssetImage("assets/home.png"), size: 25,),
+                    ? const AssetImage("assets/home_screen/homefilled.png")
+                    : const AssetImage("assets/home_screen/home.png"), size: 25,),
                 onPressed: () =>
                 {
                   setState(() {
@@ -819,8 +817,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               IconButton(
                 icon: isPressed_search
-                    ? Icon(CustomIcons.search, size: 30)
-                    : Icon(CustomIcons2.search, size: 20),
+                    ? const Icon(CustomIcons.search, size: 30)
+                    : const Icon(CustomIcons2.search, size: 20),
                 onPressed: () =>
                 {
                   setState(() {
@@ -833,8 +831,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
               IconButton(
-                icon: isPressed_reels ? ImageIcon(
-                  AssetImage("assets/reelsfilled2.png"),) : Icon(
+                icon: isPressed_reels ? const ImageIcon(
+                  AssetImage("assets/home_screen/reelsfilled2.png"),) : const Icon(
                     CustomIcons.reels, size: 21),
                 onPressed: () =>
                 {
@@ -866,7 +864,7 @@ class _HomeScreenState extends State<HomeScreen> {
               IconButton(
                 icon: !isPressed_account ?
                 const CircleAvatar(
-                  backgroundImage: AssetImage("assets/me.jpg"),
+                  backgroundImage: AssetImage("assets/home_screen/me.jpg"),
                   radius: 14,
                 )
                     : Stack(
@@ -879,7 +877,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     Center(
                       child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/me.jpg"),
+                        backgroundImage: AssetImage("assets/home_screen/me.jpg"),
                         radius: 14,
                       ),
                     ),
@@ -923,17 +921,17 @@ class NavigationItem extends StatelessWidget {
         children: <Widget>[
           Text(
             title!,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           Text(
             description!,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.grey,
               fontSize: 16,
             ),
@@ -953,7 +951,7 @@ class NavigationItem extends StatelessWidget {
         borderRadius: borderRadius,
         onTap: onTap,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           child: Row(
             children: <Widget>[
               SizedBox(
@@ -961,14 +959,14 @@ class NavigationItem extends StatelessWidget {
                 height: 56,
                 child: icon,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 16,
               ),
               _buildTitles(),
-              SizedBox(
+              const SizedBox(
                 width: 16,
               ),
-              Icon(
+              const Icon(
                 Icons.chevron_right,
                 color: Colors.grey,
               ),
